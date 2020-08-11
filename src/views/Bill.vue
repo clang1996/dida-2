@@ -1,11 +1,13 @@
 <template>
     <Layout>
         <header class="header">
+<!--         顶部logo-->
             <div class="logo">
              <img src="../assets/logogo22.png" alt="">
             </div>
             <div class="info">
                 <div class="calendar">
+<!--                 watch-->
                     <select v-model="year" class="year">
                         <option v-for="y in years" :key="y" :value="y">{{y}}年</option>
                     </select>
@@ -45,7 +47,8 @@
                     <router-link class="item" v-for="(item, index) in group.items" :key="index" :to="`/record/edit/${item.id}`">
                         <div class="tag">
                             <Icon :name="item.tag.name" class="icon"/>
-                            <span>{{item.tag.value}}</span></div>
+                            <span>{{item.tag.value}}</span>
+                        </div>
                         <span>{{getAmount(item)}}</span>
                     </router-link>
                 </div>
@@ -76,13 +79,12 @@
         components: {Blank, Icon, Layout}
     })
     export default class Bill extends Vue {
-        logo: string = logo;
         year = window.sessionStorage.getItem('year') || dayjs().year().toString();
         month = window.sessionStorage.getItem('month') || (dayjs().month() + 1).toString();
 
         get years() {
             const endYear = dayjs().year();
-            let y = 1970;
+            let y = 2010;
             const result: number[] = [];
             while (y <= endYear) {
                 result.push(y);

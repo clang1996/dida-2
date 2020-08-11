@@ -29,8 +29,10 @@
                 <li>
                     <label class="date">
                         <span class="name">日期</span>
-                        <DatePicker :initial-date="dayjs(record.createAt).toISOString()" @update:year="updateYear"
-                                    @update:month="updateMonth" @update:date="updateDate"/>
+                        <DatePicker :initial-date="dayjs(record.createAt).toISOString()"
+                                    @update:year="updateYear"
+                                    @update:month="updateMonth"
+                                    @update:date="updateDate"/>
                     </label>
                 </li>
                 <li>
@@ -75,7 +77,7 @@
                     amount: 0,
                     createAt: new Date()
                 }; // 消除Vue warn
-                this.$router.replace('/error');
+                this.$router.replace('/exception');
             }
         }
 

@@ -44,6 +44,10 @@
         }
 
         complete() {
+            if(this.record.amount<=0){
+              alert("金额不能小于0元")
+             return
+            }
             this.$store.commit('insertRecord', clone<RecordItem>(this.record));
             this.record = this.initRecord();
             this.$router.replace('/bill');

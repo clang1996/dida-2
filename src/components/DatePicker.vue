@@ -35,7 +35,7 @@
 
         get years() {
             const endYear = dayjs().year();
-            let y = 1970;
+            let y = 2005;
             const result: number[] = [];
             while (y <= endYear) {
                 result.push(y);
@@ -69,11 +69,13 @@
 
         @Watch('month')
         onMonthChange(month: number) {
+            console.log(1);
             this.$emit('update:month', month);
         }
 
         @Watch('date')
         onDateChange(date: number) {
+            console.log(1);
             this.$emit('update:date', date);
         }
     }
